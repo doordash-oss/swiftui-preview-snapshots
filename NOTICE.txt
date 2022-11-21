@@ -1,0 +1,7 @@
+PreviewSnapshots
+Copyright 2022 DoorDash, Inc.
+
+This product includes software developed at DoorDash, Inc. (http://www.doordash.com/).
+
+The SnapshotTesting dependency of this framework was created by Point-Free.
+(https://github.com/pointfreeco/swift-snapshot-testing)
