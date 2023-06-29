@@ -16,6 +16,9 @@ import PreviewSnapshotsTesting
 import SwiftUI
 import XCTest
 
+#if canImport(UIKit)
+import UIKit
+
 final class PreviewSnapshotsTests: XCTestCase {
     /// PreviewSnapshots with a basic Swift type as the state
     func test_simpleState() {
@@ -207,3 +210,4 @@ extension Snapshotting where Value: SwiftUI.View, Format == UIImage {
         )
     }
 }
+#endif

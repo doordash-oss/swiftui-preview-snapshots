@@ -14,6 +14,8 @@
 import PreviewSnapshots
 import SnapshotTesting
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
 
 extension PreviewSnapshots {
     /// Assert that all of the snapshots defined in a `PreviewSnapshots` collection match their
@@ -255,3 +257,4 @@ extension PreviewSnapshots {
         }
     }
 }
+#endif
