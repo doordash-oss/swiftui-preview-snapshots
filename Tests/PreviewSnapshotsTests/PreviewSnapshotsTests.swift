@@ -218,7 +218,7 @@ extension Snapshotting where Value: SwiftUI.View, Format == NSImage {
         Snapshotting<NSView, NSImage>.image(size: .init(width: 400, height: 400)).pullback { view in
             let view = NSHostingView(rootView: view)
             view.wantsLayer = true
-            view.layer?.backgroundColor = .init(gray: 0.2, alpha: 1)
+            view.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
             return view
         }
     }
