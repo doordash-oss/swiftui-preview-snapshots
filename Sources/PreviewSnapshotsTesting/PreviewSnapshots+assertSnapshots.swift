@@ -21,6 +21,7 @@ extension PreviewSnapshots {
     ///
     /// - Parameters:
     ///   - snapshotting: Snapshotting instance for  `AnyView` into a `UIImage`.
+    ///   - name: An optional description of the snapshot to include with the configuration name.
     ///   - recording: Whether or not to record a new reference.
     ///   - file: The file in which failure occurred. Defaults to the file name of the test case in
     ///         which this function was called.
@@ -30,6 +31,7 @@ extension PreviewSnapshots {
     ///         this function was called.
     public func assertSnapshots(
         as snapshotting: Snapshotting<AnyView, UIImage> = .image,
+        named name: String? = nil,
         record recording: Bool = false,
         file: StaticString = #file,
         testName: String = #function,
@@ -39,7 +41,7 @@ extension PreviewSnapshots {
             assertSnapshot(
                 matching: configure(configuration.state),
                 as: snapshotting,
-                named: configuration.name,
+                named: configuration.snapshotName(prefix: name),
                 record: recording,
                 file: file, testName: testName, line: line
             )
@@ -52,6 +54,7 @@ extension PreviewSnapshots {
     /// - Parameters:
     ///   - strategies: A dictionary of names and strategies for serializing, deserializing, and
     ///         comparing values.
+    ///   - name: An optional description of the snapshot to include with the configuration name.
     ///   - recording: Whether or not to record a new reference.
     ///   - file: The file in which failure occurred. Defaults to the file name of the test case in
     ///         which this function was called.
@@ -61,6 +64,7 @@ extension PreviewSnapshots {
     ///         this function was called.
     public func assertSnapshots(
         as strategies: [String: Snapshotting<AnyView, UIImage>],
+        named name: String? = nil,
         record recording: Bool = false,
         file: StaticString = #file,
         testName: String = #function,
@@ -71,7 +75,7 @@ extension PreviewSnapshots {
                 assertSnapshot(
                     matching: configure(configuration.state),
                     as: strategy,
-                    named: configuration.name + "-\(key)",
+                    named: configuration.snapshotName(prefix: name) + "-\(key)",
                     record: recording,
                     file: file, testName: testName, line: line
                 )
@@ -84,6 +88,7 @@ extension PreviewSnapshots {
     ///
     /// - Parameters:
     ///   - strategies: An array of strategies for serializing, deserializing, and comparing values.
+    ///   - name: An optional description of the snapshot to include with the configuration name.
     ///   - recording: Whether or not to record a new reference.
     ///   - file: The file in which failure occurred. Defaults to the file name of the test case in
     ///         which this function was called.
@@ -93,6 +98,7 @@ extension PreviewSnapshots {
     ///         this function was called.
     public func assertSnapshots(
         as strategies: [Snapshotting<AnyView, UIImage>],
+        named name: String? = nil,
         record recording: Bool = false,
         file: StaticString = #file,
         testName: String = #function,
@@ -103,7 +109,7 @@ extension PreviewSnapshots {
                 assertSnapshot(
                     matching: configure(configuration.state),
                     as: strategy,
-                    named: configuration.name + "-\(position + 1)",
+                    named: configuration.snapshotName(prefix: name) + "-\(position + 1)",
                     record: recording,
                     file: file, testName: testName, line: line
                 )
@@ -133,6 +139,7 @@ extension PreviewSnapshots {
     ///
     /// - Parameters:
     ///   - snapshotting: Snapshotting instance that converts an `AnyView` into a `UIImage`.
+    ///   - name: An optional description of the snapshot to include with the configuration name.
     ///   - recording: Whether or not to record a new reference.
     ///   - file: The file in which failure occurred. Defaults to the file name of the test case in
     ///         which this function was called.
@@ -143,6 +150,7 @@ extension PreviewSnapshots {
     ///   - modify: A closure to update the preview content before snapshotting.
     public func assertSnapshots<Modified: View>(
         as snapshotting: Snapshotting<Modified, UIImage> = .image,
+        named name: String? = nil,
         record recording: Bool = false,
         file: StaticString = #file,
         testName: String = #function,
@@ -153,7 +161,7 @@ extension PreviewSnapshots {
             assertSnapshot(
                 matching: modify(configure(configuration.state)),
                 as: snapshotting,
-                named: configuration.name,
+                named: configuration.snapshotName(prefix: name),
                 record: recording,
                 file: file, testName: testName, line: line
             )
@@ -179,6 +187,7 @@ extension PreviewSnapshots {
     /// - Parameters:
     ///   - strategies: A dictionary of names and strategies for serializing, deserializing, and
     ///         comparing values.
+    ///   - name: An optional description of the snapshot to include with the configuration name.
     ///   - recording: Whether or not to record a new reference.
     ///   - file: The file in which failure occurred. Defaults to the file name of the test case in
     ///         which this function was called.
@@ -189,6 +198,7 @@ extension PreviewSnapshots {
     ///   - modify: A closure to update the preview content before snapshotting.
     public func assertSnapshots<Modified: View>(
         as strategies: [String: Snapshotting<AnyView, UIImage>],
+        named name: String? = nil,
         record recording: Bool = false,
         file: StaticString = #file,
         testName: String = #function,
@@ -200,7 +210,7 @@ extension PreviewSnapshots {
                 assertSnapshot(
                     matching: configure(configuration.state),
                     as: strategy,
-                    named: configuration.name + "-\(key)",
+                    named: configuration.snapshotName(prefix: name) + "-\(key)",
                     record: recording,
                     file: file, testName: testName, line: line
                 )
@@ -226,6 +236,7 @@ extension PreviewSnapshots {
     ///
     /// - Parameters:
     ///   - snapshotting: Snapshotting instance that converts an `AnyView` into a `UIImage`.
+    ///   - name: An optional description of the snapshot to include with the configuration name.
     ///   - recording: Whether or not to record a new reference.
     ///   - file: The file in which failure occurred. Defaults to the file name of the test case in
     ///         which this function was called.
@@ -236,6 +247,7 @@ extension PreviewSnapshots {
     ///   - modify: A closure to update the preview content before snapshotting.
     public func assertSnapshots<Modified: View>(
         as strategies: [Snapshotting<Modified, UIImage>],
+        named name: String? = nil,
         record recording: Bool = false,
         file: StaticString = #file,
         testName: String = #function,
@@ -247,11 +259,21 @@ extension PreviewSnapshots {
                 assertSnapshot(
                     matching: modify(configure(configuration.state)),
                     as: strategy,
-                    named: configuration.name + "-\(position)",
+                    named: configuration.snapshotName(prefix: name) + "-\(position)",
                     record: recording,
                     file: file, testName: testName, line: line
                 )
             }
         }
+    }
+}
+
+// MARK: Configuration name helper
+
+extension PreviewSnapshots.Configuration {
+    /// Construct a snapshot name based on the configuration name and an optional suffix.
+    func snapshotName(prefix: String?) -> String {
+        guard let prefix else { return name }
+        return "\(prefix)-\(name)"
     }
 }
