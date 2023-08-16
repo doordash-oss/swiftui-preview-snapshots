@@ -43,6 +43,32 @@ final class PreviewSnapshotsTests: XCTestCase {
         snapshots.assertSnapshots(as: .testStrategy)
     }
     
+    /// PreviewSnapshots assertion using `named` parameter
+    func test_namedAssertion() {
+        struct ContentView: View {
+            let message: String
+            
+            var body: some View {
+                Text(message)
+                    .font(.largeTitle)
+                    .foregroundColor(.blue)
+                    .padding(8)
+            }
+        }
+        
+        let snapshots = PreviewSnapshots<String>(
+            configurations: [
+                .init(name: "Short Message", state: "Hello!"),
+                .init(name: "Long Message", state: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            ],
+            configure: { message in
+                ContentView(message: message)
+            }
+        )
+        
+        snapshots.assertSnapshots(as: .testStrategy, named: "Named Assertion")
+    }
+    
     /// PreviewSnapshots with a tuple as the state
     func test_tupleState() {
         struct ContentView: View {
