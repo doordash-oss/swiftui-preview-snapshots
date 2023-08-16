@@ -216,7 +216,10 @@ extension Snapshotting where Value: SwiftUI.View, Format == NSImage {
     /// Shared image test strategy
     static var testStrategy: Self {
         Snapshotting<NSView, NSImage>.image(size: .init(width: 400, height: 400)).pullback { view in
-            NSHostingView(rootView: view)
+            let view = NSHostingView(rootView: view)
+            view.wantsLayer = true
+            view.layer?.backgroundColor = .init(gray: 0.2, alpha: 1)
+            return view
         }
     }
 }
