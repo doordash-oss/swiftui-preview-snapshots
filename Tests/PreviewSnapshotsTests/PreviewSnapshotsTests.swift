@@ -40,33 +40,7 @@ final class PreviewSnapshotsTests: XCTestCase {
             }
         )
         
-        snapshots.assertSnapshots(as: .testStrategy)
-    }
-    
-    /// PreviewSnapshots assertion using `named` parameter
-    func test_namedAssertion() {
-        struct ContentView: View {
-            let message: String
-            
-            var body: some View {
-                Text(message)
-                    .font(.largeTitle)
-                    .foregroundColor(.blue)
-                    .padding(8)
-            }
-        }
-        
-        let snapshots = PreviewSnapshots<String>(
-            configurations: [
-                .init(name: "Short Message", state: "Hello!"),
-                .init(name: "Long Message", state: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-            ],
-            configure: { message in
-                ContentView(message: message)
-            }
-        )
-        
-        snapshots.assertSnapshots(as: .testStrategy, named: "Named Assertion")
+        snapshots.assertSnapshots(as: .testStrategy, named: frameworkName)
     }
     
     /// PreviewSnapshots with a tuple as the state
@@ -105,7 +79,7 @@ final class PreviewSnapshotsTests: XCTestCase {
             }
         )
         
-        snapshots.assertSnapshots(as: .testStrategy)
+        snapshots.assertSnapshots(as: .testStrategy, named: frameworkName)
     }
     
     /// PreviewSnapshots with an ObservableObject as the state
@@ -144,7 +118,7 @@ final class PreviewSnapshotsTests: XCTestCase {
             }
         )
         
-        snapshots.assertSnapshots(as: .testStrategy)
+        snapshots.assertSnapshots(as: .testStrategy, named: frameworkName)
     }
     
     /// PreviewSnapshots using a NamedPreviewState as the state
@@ -193,7 +167,7 @@ final class PreviewSnapshotsTests: XCTestCase {
             }
         )
         
-        snapshots.assertSnapshots(as: .testStrategy)
+        snapshots.assertSnapshots(as: .testStrategy, named: frameworkName)
     }
     
     /// PreviewSnapshots using assertSnapshots's modify function
@@ -218,11 +192,13 @@ final class PreviewSnapshotsTests: XCTestCase {
             }
         )
         
-        snapshots.assertSnapshots(as: .testStrategy) { view in
+        snapshots.assertSnapshots(as: .testStrategy, named: frameworkName) { view in
             view.border(Color.blue)
         }
     }
 }
+#if os(iOS) || os(tvOS)
+let frameworkName = "UIKit"
 
 extension Snapshotting where Value: SwiftUI.View, Format == UIImage {
     /// Shared image test strategy
@@ -233,3 +209,15 @@ extension Snapshotting where Value: SwiftUI.View, Format == UIImage {
         )
     }
 }
+#elseif os(macOS)
+let frameworkName = "AppKit"
+
+extension Snapshotting where Value: SwiftUI.View, Format == NSImage {
+    /// Shared image test strategy
+    static var testStrategy: Self {
+        Snapshotting<NSView, NSImage>.image(size: .init(width: 400, height: 400)).pullback { view in
+            NSHostingView(rootView: view)
+        }
+    }
+}
+#endif
