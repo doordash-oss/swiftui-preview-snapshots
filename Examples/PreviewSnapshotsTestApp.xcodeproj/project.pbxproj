@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A0E5F83292807BA00E3ED94 /* test_previewStateViewSnapshots.Short.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0E5F79292807BA00E3ED94 /* test_previewStateViewSnapshots.Short.png */; };
-		3A0E5F84292807BA00E3ED94 /* test_observableObjectSnapshots.Too-Short.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0E5F7A292807BA00E3ED94 /* test_observableObjectSnapshots.Too-Short.png */; };
-		3A0E5F86292807BA00E3ED94 /* test_simpleViewSnapshots.Long-Message.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0E5F7C292807BA00E3ED94 /* test_simpleViewSnapshots.Long-Message.png */; };
-		3A0E5F87292807BA00E3ED94 /* test_previewStateViewSnapshots.Long.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0E5F7D292807BA00E3ED94 /* test_previewStateViewSnapshots.Long.png */; };
-		3A0E5F88292807BA00E3ED94 /* test_simpleViewSnapshots.Short-Message.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0E5F7E292807BA00E3ED94 /* test_simpleViewSnapshots.Short-Message.png */; };
-		3A0E5F8A292807BA00E3ED94 /* test_observableObjectSnapshots.Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0E5F80292807BA00E3ED94 /* test_observableObjectSnapshots.Empty.png */; };
-		3A0E5F8C292807BA00E3ED94 /* test_observableObjectSnapshots.Valid.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0E5F82292807BA00E3ED94 /* test_observableObjectSnapshots.Valid.png */; };
+		3A6429A12A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429962A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Dark.png */; };
+		3A6429A22A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Short-Message.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429972A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Short-Message.png */; };
+		3A6429A32A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Long.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429982A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Long.png */; };
+		3A6429A42A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Valid.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429992A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Valid.png */; };
+		3A6429A52A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A64299A2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Dark.png */; };
+		3A6429A62A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A64299B2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Light.png */; };
+		3A6429A72A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Short.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A64299C2A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Short.png */; };
+		3A6429A82A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A64299D2A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Empty.png */; };
+		3A6429A92A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Too-Short.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A64299E2A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Too-Short.png */; };
+		3A6429AA2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A64299F2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Light.png */; };
+		3A6429AB2A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Long-Message.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429A02A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Long-Message.png */; };
+		3A6429B72A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Valid.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429AC2A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Valid.png */; };
+		3A6429B82A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Short.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429AD2A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Short.png */; };
+		3A6429B92A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Long.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429AE2A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Long.png */; };
+		3A6429BA2A8D679800D02EBC /* test_simpleViewSnapshots.iOS-Long-Message.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429AF2A8D679800D02EBC /* test_simpleViewSnapshots.iOS-Long-Message.png */; };
+		3A6429BB2A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429B02A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Empty.png */; };
+		3A6429BC2A8D679900D02EBC /* test_previewStateLightAndDark.iOS-Long-Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429B12A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Long-Light.png */; };
+		3A6429BD2A8D679900D02EBC /* test_previewStateLightAndDark.iOS-Short-Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429B22A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Short-Light.png */; };
+		3A6429BE2A8D679900D02EBC /* test_simpleViewSnapshots.iOS-Short-Message.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429B32A8D679800D02EBC /* test_simpleViewSnapshots.iOS-Short-Message.png */; };
+		3A6429BF2A8D679900D02EBC /* test_previewStateLightAndDark.iOS-Short-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429B42A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Short-Dark.png */; };
+		3A6429C02A8D679900D02EBC /* test_observableObjectSnapshots.iOS-Too-Short.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429B52A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Too-Short.png */; };
+		3A6429C12A8D679900D02EBC /* test_previewStateLightAndDark.iOS-Long-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6429B62A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Long-Dark.png */; };
 		3AA4784D290078DC00ED9DE6 /* PreviewSnapshotsTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA4784C290078DC00ED9DE6 /* PreviewSnapshotsTesting */; };
 		3AA47855290079B700ED9DE6 /* PreviewStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA47854290079B700ED9DE6 /* PreviewStateView.swift */; };
 		3AA4785E29007BF500ED9DE6 /* ObservableObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4785D29007BF500ED9DE6 /* ObservableObjectView.swift */; };
@@ -22,10 +37,6 @@
 		3AD37F2A2900736800184899 /* SimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD37F292900736800184899 /* SimpleView.swift */; };
 		3AD37F2C2900736D00184899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD37F2B2900736D00184899 /* Assets.xcassets */; };
 		3AD37F392900736E00184899 /* PreviewSnapshotsTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD37F382900736E00184899 /* PreviewSnapshotsTestAppTests.swift */; };
-		3AE7CC84292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7CC80292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Light.png */; };
-		3AE7CC85292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7CC81292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Light.png */; };
-		3AE7CC86292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7CC82292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Dark.png */; };
-		3AE7CC87292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7CC83292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Dark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,13 +50,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A0E5F79292807BA00E3ED94 /* test_previewStateViewSnapshots.Short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_previewStateViewSnapshots.Short.png; sourceTree = "<group>"; };
-		3A0E5F7A292807BA00E3ED94 /* test_observableObjectSnapshots.Too-Short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_observableObjectSnapshots.Too-Short.png"; sourceTree = "<group>"; };
-		3A0E5F7C292807BA00E3ED94 /* test_simpleViewSnapshots.Long-Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_simpleViewSnapshots.Long-Message.png"; sourceTree = "<group>"; };
-		3A0E5F7D292807BA00E3ED94 /* test_previewStateViewSnapshots.Long.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_previewStateViewSnapshots.Long.png; sourceTree = "<group>"; };
-		3A0E5F7E292807BA00E3ED94 /* test_simpleViewSnapshots.Short-Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_simpleViewSnapshots.Short-Message.png"; sourceTree = "<group>"; };
-		3A0E5F80292807BA00E3ED94 /* test_observableObjectSnapshots.Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_observableObjectSnapshots.Empty.png; sourceTree = "<group>"; };
-		3A0E5F82292807BA00E3ED94 /* test_observableObjectSnapshots.Valid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_observableObjectSnapshots.Valid.png; sourceTree = "<group>"; };
+		3A6429962A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.macOS-Long-Dark.png"; sourceTree = "<group>"; };
+		3A6429972A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Short-Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_simpleViewSnapshots.macOS-Short-Message.png"; sourceTree = "<group>"; };
+		3A6429982A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Long.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateViewSnapshots.macOS-Long.png"; sourceTree = "<group>"; };
+		3A6429992A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Valid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_observableObjectSnapshots.macOS-Valid.png"; sourceTree = "<group>"; };
+		3A64299A2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.macOS-Short-Dark.png"; sourceTree = "<group>"; };
+		3A64299B2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.macOS-Short-Light.png"; sourceTree = "<group>"; };
+		3A64299C2A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateViewSnapshots.macOS-Short.png"; sourceTree = "<group>"; };
+		3A64299D2A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_observableObjectSnapshots.macOS-Empty.png"; sourceTree = "<group>"; };
+		3A64299E2A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Too-Short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_observableObjectSnapshots.macOS-Too-Short.png"; sourceTree = "<group>"; };
+		3A64299F2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.macOS-Long-Light.png"; sourceTree = "<group>"; };
+		3A6429A02A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Long-Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_simpleViewSnapshots.macOS-Long-Message.png"; sourceTree = "<group>"; };
+		3A6429AC2A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Valid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_observableObjectSnapshots.iOS-Valid.png"; sourceTree = "<group>"; };
+		3A6429AD2A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateViewSnapshots.iOS-Short.png"; sourceTree = "<group>"; };
+		3A6429AE2A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Long.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateViewSnapshots.iOS-Long.png"; sourceTree = "<group>"; };
+		3A6429AF2A8D679800D02EBC /* test_simpleViewSnapshots.iOS-Long-Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_simpleViewSnapshots.iOS-Long-Message.png"; sourceTree = "<group>"; };
+		3A6429B02A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_observableObjectSnapshots.iOS-Empty.png"; sourceTree = "<group>"; };
+		3A6429B12A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Long-Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.iOS-Long-Light.png"; sourceTree = "<group>"; };
+		3A6429B22A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Short-Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.iOS-Short-Light.png"; sourceTree = "<group>"; };
+		3A6429B32A8D679800D02EBC /* test_simpleViewSnapshots.iOS-Short-Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_simpleViewSnapshots.iOS-Short-Message.png"; sourceTree = "<group>"; };
+		3A6429B42A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Short-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.iOS-Short-Dark.png"; sourceTree = "<group>"; };
+		3A6429B52A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Too-Short.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_observableObjectSnapshots.iOS-Too-Short.png"; sourceTree = "<group>"; };
+		3A6429B62A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Long-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.iOS-Long-Dark.png"; sourceTree = "<group>"; };
 		3AA47854290079B700ED9DE6 /* PreviewStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewStateView.swift; sourceTree = "<group>"; };
 		3AA4785D29007BF500ED9DE6 /* ObservableObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectView.swift; sourceTree = "<group>"; };
 		3AC960F7292BE4CF0093A901 /* swiftui-preview-snapshots */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swiftui-preview-snapshots"; path = ..; sourceTree = "<group>"; };
@@ -55,10 +81,6 @@
 		3AD37F2B2900736D00184899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AD37F342900736E00184899 /* PreviewSnapshotsTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PreviewSnapshotsTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD37F382900736E00184899 /* PreviewSnapshotsTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSnapshotsTestAppTests.swift; sourceTree = "<group>"; };
-		3AE7CC80292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.Long-Light.png"; sourceTree = "<group>"; };
-		3AE7CC81292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.Short-Light.png"; sourceTree = "<group>"; };
-		3AE7CC82292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.Short-Dark.png"; sourceTree = "<group>"; };
-		3AE7CC83292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test_previewStateLightAndDark.Long-Dark.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,17 +122,28 @@
 		3AA4784F2900797500ED9DE6 /* PreviewSnapshotsTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				3AE7CC83292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Dark.png */,
-				3AE7CC80292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Light.png */,
-				3AE7CC82292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Dark.png */,
-				3AE7CC81292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Light.png */,
-				3A0E5F80292807BA00E3ED94 /* test_observableObjectSnapshots.Empty.png */,
-				3A0E5F7A292807BA00E3ED94 /* test_observableObjectSnapshots.Too-Short.png */,
-				3A0E5F82292807BA00E3ED94 /* test_observableObjectSnapshots.Valid.png */,
-				3A0E5F7D292807BA00E3ED94 /* test_previewStateViewSnapshots.Long.png */,
-				3A0E5F79292807BA00E3ED94 /* test_previewStateViewSnapshots.Short.png */,
-				3A0E5F7C292807BA00E3ED94 /* test_simpleViewSnapshots.Long-Message.png */,
-				3A0E5F7E292807BA00E3ED94 /* test_simpleViewSnapshots.Short-Message.png */,
+				3A6429B02A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Empty.png */,
+				3A6429B52A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Too-Short.png */,
+				3A6429AC2A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Valid.png */,
+				3A6429B62A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Long-Dark.png */,
+				3A6429B12A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Long-Light.png */,
+				3A6429B42A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Short-Dark.png */,
+				3A6429B22A8D679800D02EBC /* test_previewStateLightAndDark.iOS-Short-Light.png */,
+				3A6429AE2A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Long.png */,
+				3A6429AD2A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Short.png */,
+				3A6429AF2A8D679800D02EBC /* test_simpleViewSnapshots.iOS-Long-Message.png */,
+				3A6429B32A8D679800D02EBC /* test_simpleViewSnapshots.iOS-Short-Message.png */,
+				3A64299D2A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Empty.png */,
+				3A64299E2A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Too-Short.png */,
+				3A6429992A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Valid.png */,
+				3A6429962A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Dark.png */,
+				3A64299F2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Light.png */,
+				3A64299A2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Dark.png */,
+				3A64299B2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Light.png */,
+				3A6429982A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Long.png */,
+				3A64299C2A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Short.png */,
+				3A6429A02A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Long-Message.png */,
+				3A6429972A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Short-Message.png */,
 			);
 			path = PreviewSnapshotsTestAppTests;
 			sourceTree = "<group>";
@@ -252,17 +285,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A0E5F84292807BA00E3ED94 /* test_observableObjectSnapshots.Too-Short.png in Resources */,
-				3AE7CC84292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Light.png in Resources */,
-				3A0E5F87292807BA00E3ED94 /* test_previewStateViewSnapshots.Long.png in Resources */,
-				3A0E5F8C292807BA00E3ED94 /* test_observableObjectSnapshots.Valid.png in Resources */,
-				3A0E5F88292807BA00E3ED94 /* test_simpleViewSnapshots.Short-Message.png in Resources */,
-				3AE7CC87292BE12200D0EF74 /* test_previewStateLightAndDark.Long-Dark.png in Resources */,
-				3A0E5F83292807BA00E3ED94 /* test_previewStateViewSnapshots.Short.png in Resources */,
-				3AE7CC85292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Light.png in Resources */,
-				3A0E5F8A292807BA00E3ED94 /* test_observableObjectSnapshots.Empty.png in Resources */,
-				3A0E5F86292807BA00E3ED94 /* test_simpleViewSnapshots.Long-Message.png in Resources */,
-				3AE7CC86292BE12200D0EF74 /* test_previewStateLightAndDark.Short-Dark.png in Resources */,
+				3A6429BE2A8D679900D02EBC /* test_simpleViewSnapshots.iOS-Short-Message.png in Resources */,
+				3A6429A52A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Dark.png in Resources */,
+				3A6429BA2A8D679800D02EBC /* test_simpleViewSnapshots.iOS-Long-Message.png in Resources */,
+				3A6429BB2A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Empty.png in Resources */,
+				3A6429C12A8D679900D02EBC /* test_previewStateLightAndDark.iOS-Long-Dark.png in Resources */,
+				3A6429AA2A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Light.png in Resources */,
+				3A6429AB2A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Long-Message.png in Resources */,
+				3A6429A32A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Long.png in Resources */,
+				3A6429A62A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Short-Light.png in Resources */,
+				3A6429A42A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Valid.png in Resources */,
+				3A6429A12A8D66EA00D02EBC /* test_previewStateLightAndDark.macOS-Long-Dark.png in Resources */,
+				3A6429B72A8D679800D02EBC /* test_observableObjectSnapshots.iOS-Valid.png in Resources */,
+				3A6429BF2A8D679900D02EBC /* test_previewStateLightAndDark.iOS-Short-Dark.png in Resources */,
+				3A6429BD2A8D679900D02EBC /* test_previewStateLightAndDark.iOS-Short-Light.png in Resources */,
+				3A6429A22A8D66EA00D02EBC /* test_simpleViewSnapshots.macOS-Short-Message.png in Resources */,
+				3A6429BC2A8D679900D02EBC /* test_previewStateLightAndDark.iOS-Long-Light.png in Resources */,
+				3A6429C02A8D679900D02EBC /* test_observableObjectSnapshots.iOS-Too-Short.png in Resources */,
+				3A6429A82A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Empty.png in Resources */,
+				3A6429B92A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Long.png in Resources */,
+				3A6429A92A8D66EA00D02EBC /* test_observableObjectSnapshots.macOS-Too-Short.png in Resources */,
+				3A6429A72A8D66EA00D02EBC /* test_previewStateViewSnapshots.macOS-Short.png in Resources */,
+				3A6429B82A8D679800D02EBC /* test_previewStateViewSnapshots.iOS-Short.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +479,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doordash.PreviewSnapshotsTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -463,6 +510,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doordash.PreviewSnapshotsTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,6 +532,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doordash.PreviewSnapshotsTestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,6 +555,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doordash.PreviewSnapshotsTestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

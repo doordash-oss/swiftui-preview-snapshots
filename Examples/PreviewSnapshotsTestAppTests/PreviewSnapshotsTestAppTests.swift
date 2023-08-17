@@ -20,25 +20,31 @@ import XCTest
 
 final class PreviewSnapshotsTestAppTests: XCTestCase {
     func test_simpleViewSnapshots() {
-        SimpleView_Previews.snapshots.assertSnapshots(as: .testStrategy())
+        SimpleView_Previews.snapshots.assertSnapshots(as: .testStrategy(), named: platformName)
     }
     
     func test_previewStateViewSnapshots() {
-        PreviewStateView_Previews.snapshots.assertSnapshots(as: .testStrategy())
+        PreviewStateView_Previews.snapshots.assertSnapshots(as: .testStrategy(), named: platformName)
     }
     
     func test_observableObjectSnapshots() {
-        ObservableObjectView_Previews.snapshots.assertSnapshots(as: .testStrategy())
+        ObservableObjectView_Previews.snapshots.assertSnapshots(as: .testStrategy(), named: platformName)
     }
     
     func test_previewStateLightAndDark() {
         PreviewStateView_Previews.snapshots
-            .assertSnapshots(as: [
-                "Light": .testStrategy(userInterfaceStyle: .light),
-                "Dark": .testStrategy(userInterfaceStyle: .dark),
-            ])
+            .assertSnapshots(
+                as: [
+                    "Light": .testStrategy(userInterfaceStyle: .light),
+                    "Dark": .testStrategy(userInterfaceStyle: .dark),
+                ],
+                named: platformName
+            )
     }
 }
+
+#if os(iOS)
+let platformName = "iOS"
 
 extension Snapshotting where Value: SwiftUI.View, Format == UIImage {
     /// Shared image test strategy
@@ -54,3 +60,48 @@ extension Snapshotting where Value: SwiftUI.View, Format == UIImage {
         )
     }
 }
+#elseif os(macOS)
+let platformName = "macOS"
+
+extension Snapshotting where Value: SwiftUI.View, Format == NSImage {
+    /// Shared image test strategy
+    static func testStrategy(userInterfaceStyle: UserInterfaceStyle = .light) -> Self {
+        let snapshotting = Snapshotting<NSView, NSImage>.image(size: .init(width: 400, height: 400)).pullback { (view: Value) in
+            let view = NSHostingView(rootView: view.environment(\.colorScheme, userInterfaceStyle.colorScheme))
+            view.wantsLayer = true
+            view.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
+            return view
+        }
+        
+        return Snapshotting(
+            pathExtension: snapshotting.pathExtension,
+            diffing: snapshotting.diffing,
+            asyncSnapshot: { view in
+                Async { callback in
+                    userInterfaceStyle.appearance.performAsCurrentDrawingAppearance {
+                        snapshotting.snapshot(view).run(callback)
+                    }
+                }
+            }
+        )
+    }
+}
+
+enum UserInterfaceStyle {
+    case light, dark
+    
+    var colorScheme: ColorScheme {
+        switch self {
+        case .light: return .light
+        case .dark: return .dark
+        }
+    }
+    
+    var appearance: NSAppearance {
+        switch self {
+        case .light: return NSAppearance(named: .aqua)!
+        case .dark: return NSAppearance(named: .darkAqua)!
+        }
+    }
+}
+#endif
