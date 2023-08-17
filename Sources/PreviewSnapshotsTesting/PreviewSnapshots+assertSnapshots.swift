@@ -349,7 +349,7 @@ extension PreviewSnapshots {
 private extension PreviewSnapshots.Configuration {
     /// Construct a snapshot name based on the configuration name and an optional prefix.
     func snapshotName(prefix: String?) -> String {
-        guard let prefix else { return name }
+        guard let prefix = prefix else { return name }
         return "\(prefix)-\(name)"
     }
 }
