@@ -200,7 +200,7 @@ extension PreviewSnapshots {
     ///         this function was called.
     ///   - modify: A closure to update the preview content before snapshotting.
     public func assertSnapshots<Modified: View, Format>(
-        as strategies: [String: Snapshotting<AnyView, Format>],
+        as strategies: [String: Snapshotting<Modified, Format>],
         named name: String? = nil,
         record recording: Bool = false,
         file: StaticString = #file,
@@ -211,7 +211,7 @@ extension PreviewSnapshots {
         for configuration in configurations {
             for (key, strategy) in strategies {
                 assertSnapshot(
-                    matching: configure(configuration.state),
+                    matching: modify(configure(configuration.state)),
                     as: strategy,
                     named: configuration.snapshotName(prefix: name) + "-\(key)",
                     record: recording,
