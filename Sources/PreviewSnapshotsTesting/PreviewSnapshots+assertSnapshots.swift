@@ -346,7 +346,7 @@ extension PreviewSnapshots {
 
 // MARK: Configuration name helper
 
-private extension PreviewSnapshots.Configuration {
+public extension PreviewSnapshots.Configuration {
     /// Construct a snapshot name based on the configuration name and an optional prefix.
     func snapshotName(prefix: String?) -> String {
         guard let prefix = prefix else { return name }
