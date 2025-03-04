@@ -1,3 +1,4 @@
+
 // Copyright 2022 DoorDash, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +15,13 @@
 import PreviewSnapshots
 import PreviewSnapshotsTesting
 import SwiftUI
-import XCTest
+import Testing
 
-final class PreviewSnapshotsTests: XCTestCase {
+@MainActor
+@Suite
+struct PreviewSnapshotsSwiftTests {
     /// PreviewSnapshots with a basic Swift type as the state
-    func test_simpleState() {
+    @Test func test_simpleState() throws {
         struct ContentView: View {
             let message: String
             
@@ -44,7 +47,7 @@ final class PreviewSnapshotsTests: XCTestCase {
     }
     
     /// PreviewSnapshots with a tuple as the state
-    func test_tupleState() {
+    @Test func test_tupleState() throws {
         struct ContentView: View {
             let message: String
             let count: Int
@@ -83,7 +86,7 @@ final class PreviewSnapshotsTests: XCTestCase {
     }
     
     /// PreviewSnapshots with an ObservableObject as the state
-    func test_viewModel() {
+    @Test func test_viewModel() throws {
         final class ContentViewModel: ObservableObject {
             @Published var message = ""
             @Published var isLoading = true
@@ -122,7 +125,7 @@ final class PreviewSnapshotsTests: XCTestCase {
     }
     
     /// PreviewSnapshots using a NamedPreviewState as the state
-    func test_namedPreviewState() {
+    @Test func test_namedPreviewState() throws {
         struct ContentView: View {
             let title: String
             let subtitle: String
@@ -171,7 +174,7 @@ final class PreviewSnapshotsTests: XCTestCase {
     }
     
     /// PreviewSnapshots using assertSnapshots's modify function
-    func test_modify() {
+    @Test func test_modify() throws {
         struct ContentView: View {
             let message: String
             

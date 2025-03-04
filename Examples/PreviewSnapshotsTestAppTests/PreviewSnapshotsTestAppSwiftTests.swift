@@ -14,24 +14,31 @@
 import PreviewSnapshotsTesting
 import SnapshotTesting
 import SwiftUI
-import XCTest
+import Testing
 
 @testable import PreviewSnapshotsTestApp
 
-final class PreviewSnapshotsTestAppTests: XCTestCase {
-    func test_simpleViewSnapshots() {
+@MainActor
+@Suite
+struct PreviewSnapshotsTestAppSwiftTests {
+
+    @Test
+    func test_simpleViewSnapshots() throws {
         SimpleView_Previews.snapshots.assertSnapshots(as: .testStrategy(), named: platformName)
     }
-    
-    func test_previewStateViewSnapshots() {
+
+    @Test
+    func test_previewStateViewSnapshots() throws {
         PreviewStateView_Previews.snapshots.assertSnapshots(as: .testStrategy(), named: platformName)
     }
-    
-    func test_observableObjectSnapshots() {
+
+    @Test
+    func test_observableObjectSnapshots() throws {
         ObservableObjectView_Previews.snapshots.assertSnapshots(as: .testStrategy(), named: platformName)
     }
-    
-    func test_previewStateLightAndDark() {
+
+    @Test
+    func test_previewStateLightAndDark() throws {
         PreviewStateView_Previews.snapshots
             .assertSnapshots(
                 as: [

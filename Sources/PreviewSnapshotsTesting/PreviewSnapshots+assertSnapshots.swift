@@ -39,7 +39,7 @@ extension PreviewSnapshots {
     ) {
         for configuration in configurations {
             assertSnapshot(
-                matching: configure(configuration.state),
+                of: configure(configuration.state),
                 as: snapshotting,
                 named: configuration.snapshotName(prefix: name),
                 record: recording,
@@ -73,7 +73,7 @@ extension PreviewSnapshots {
         for configuration in configurations {
             for (key, strategy) in strategies {
                 assertSnapshot(
-                    matching: configure(configuration.state),
+                    of: configure(configuration.state),
                     as: strategy,
                     named: configuration.snapshotName(prefix: name) + "-\(key)",
                     record: recording,
@@ -107,7 +107,7 @@ extension PreviewSnapshots {
         for configuration in configurations {
             for (position, strategy) in strategies.enumerated() {
                 assertSnapshot(
-                    matching: configure(configuration.state),
+                    of: configure(configuration.state),
                     as: strategy,
                     named: configuration.snapshotName(prefix: name) + "-\(position + 1)",
                     record: recording,
@@ -159,7 +159,7 @@ extension PreviewSnapshots {
     ) {
         for configuration in configurations {
             assertSnapshot(
-                matching: modify(configure(configuration.state)),
+                of: modify(configure(configuration.state)),
                 as: snapshotting,
                 named: configuration.snapshotName(prefix: name),
                 record: recording,
@@ -211,7 +211,7 @@ extension PreviewSnapshots {
         for configuration in configurations {
             for (key, strategy) in strategies {
                 assertSnapshot(
-                    matching: modify(configure(configuration.state)),
+                    of: modify(configure(configuration.state)),
                     as: strategy,
                     named: configuration.snapshotName(prefix: name) + "-\(key)",
                     record: recording,
@@ -263,7 +263,7 @@ extension PreviewSnapshots {
         for configuration in configurations {
             for (position, strategy) in strategies.enumerated() {
                 assertSnapshot(
-                    matching: modify(configure(configuration.state)),
+                    of: modify(configure(configuration.state)),
                     as: strategy,
                     named: configuration.snapshotName(prefix: name) + "-\(position)",
                     record: recording,
