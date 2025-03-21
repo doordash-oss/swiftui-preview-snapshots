@@ -21,7 +21,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.10.0"),
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.12.0"),
     ],
     targets: [
         // PreviewSnapshots target with no dependancies that can be imported into app code

@@ -33,17 +33,23 @@ extension PreviewSnapshots {
         as snapshotting: Snapshotting<AnyView, Format>,
         named name: String? = nil,
         record recording: Bool = false,
-        file: StaticString = #file,
+        fileID: StaticString = #fileID,
+        file filePath: StaticString = #filePath,
         testName: String = #function,
-        line: UInt = #line
+        line: UInt = #line,
+        column: UInt = #column
     ) {
         for configuration in configurations {
             assertSnapshot(
-                matching: configure(configuration.state),
+                of: configure(configuration.state),
                 as: snapshotting,
                 named: configuration.snapshotName(prefix: name),
                 record: recording,
-                file: file, testName: testName, line: line
+                fileID: fileID,
+                file: filePath,
+                testName: testName,
+                line: line,
+                column: column
             )
         }
     }
@@ -66,18 +72,24 @@ extension PreviewSnapshots {
         as strategies: [String: Snapshotting<AnyView, Format>],
         named name: String? = nil,
         record recording: Bool = false,
-        file: StaticString = #file,
+        fileID: StaticString = #fileID,
+        file filePath: StaticString = #filePath,
         testName: String = #function,
-        line: UInt = #line
+        line: UInt = #line,
+        column: UInt = #column
     ) {
         for configuration in configurations {
             for (key, strategy) in strategies {
                 assertSnapshot(
-                    matching: configure(configuration.state),
+                    of: configure(configuration.state),
                     as: strategy,
                     named: configuration.snapshotName(prefix: name) + "-\(key)",
                     record: recording,
-                    file: file, testName: testName, line: line
+                    fileID: fileID,
+                    file: filePath,
+                    testName: testName,
+                    line: line,
+                    column: column
                 )
             }
         }
@@ -100,18 +112,24 @@ extension PreviewSnapshots {
         as strategies: [Snapshotting<AnyView, Format>],
         named name: String? = nil,
         record recording: Bool = false,
-        file: StaticString = #file,
+        fileID: StaticString = #fileID,
+        file filePath: StaticString = #filePath,
         testName: String = #function,
-        line: UInt = #line
+        line: UInt = #line,
+        column: UInt = #column
     ) {
         for configuration in configurations {
             for (position, strategy) in strategies.enumerated() {
                 assertSnapshot(
-                    matching: configure(configuration.state),
+                    of: configure(configuration.state),
                     as: strategy,
                     named: configuration.snapshotName(prefix: name) + "-\(position + 1)",
                     record: recording,
-                    file: file, testName: testName, line: line
+                    fileID: fileID,
+                    file: filePath,
+                    testName: testName,
+                    line: line,
+                    column: column
                 )
             }
         }
@@ -152,18 +170,24 @@ extension PreviewSnapshots {
         as snapshotting: Snapshotting<Modified, Format>,
         named name: String? = nil,
         record recording: Bool = false,
-        file: StaticString = #file,
+        fileID: StaticString = #fileID,
+        file filePath: StaticString = #filePath,
         testName: String = #function,
         line: UInt = #line,
+        column: UInt = #column,
         modify: (AnyView) -> Modified
     ) {
         for configuration in configurations {
             assertSnapshot(
-                matching: modify(configure(configuration.state)),
+                of: modify(configure(configuration.state)),
                 as: snapshotting,
                 named: configuration.snapshotName(prefix: name),
                 record: recording,
-                file: file, testName: testName, line: line
+                fileID: fileID,
+                file: filePath,
+                testName: testName,
+                line: line,
+                column: column
             )
         }
     }
@@ -203,19 +227,25 @@ extension PreviewSnapshots {
         as strategies: [String: Snapshotting<Modified, Format>],
         named name: String? = nil,
         record recording: Bool = false,
-        file: StaticString = #file,
+        fileID: StaticString = #fileID,
+        file filePath: StaticString = #filePath,
         testName: String = #function,
         line: UInt = #line,
+        column: UInt = #column,
         modify: (AnyView) -> Modified
     ) {
         for configuration in configurations {
             for (key, strategy) in strategies {
                 assertSnapshot(
-                    matching: modify(configure(configuration.state)),
+                    of: modify(configure(configuration.state)),
                     as: strategy,
                     named: configuration.snapshotName(prefix: name) + "-\(key)",
                     record: recording,
-                    file: file, testName: testName, line: line
+                    fileID: fileID,
+                    file: filePath,
+                    testName: testName,
+                    line: line,
+                    column: column
                 )
             }
         }
@@ -255,19 +285,25 @@ extension PreviewSnapshots {
         as strategies: [Snapshotting<Modified, Format>],
         named name: String? = nil,
         record recording: Bool = false,
-        file: StaticString = #file,
+        fileID: StaticString = #fileID,
+        file filePath: StaticString = #filePath,
         testName: String = #function,
         line: UInt = #line,
+        column: UInt = #column,
         modify: (AnyView) -> Modified
     ) {
         for configuration in configurations {
             for (position, strategy) in strategies.enumerated() {
                 assertSnapshot(
-                    matching: modify(configure(configuration.state)),
+                    of: modify(configure(configuration.state)),
                     as: strategy,
                     named: configuration.snapshotName(prefix: name) + "-\(position)",
                     record: recording,
-                    file: file, testName: testName, line: line
+                    fileID: fileID,
+                    file: filePath,
+                    testName: testName,
+                    line: line,
+                    column: column
                 )
             }
         }
@@ -293,11 +329,22 @@ extension PreviewSnapshots {
     public func assertSnapshots(
         named name: String? = nil,
         record recording: Bool = false,
-        file: StaticString = #file,
+        fileID: StaticString = #fileID,
+        file filePath: StaticString = #filePath,
         testName: String = #function,
-        line: UInt = #line
+        line: UInt = #line,
+        column: UInt = #column
     ) {
-        assertSnapshots(as: .image, named: name, record: recording, file: file, testName: testName, line: line)
+        assertSnapshots(
+            as: .image,
+            named: name,
+            record: recording,
+            fileID: fileID,
+            file: filePath,
+            testName: testName,
+            line: line,
+            column: column
+        )
     }
 }
 
@@ -334,12 +381,24 @@ extension PreviewSnapshots {
     public func assertSnapshots<Modified: View>(
         named name: String? = nil,
         record recording: Bool = false,
-        file: StaticString = #file,
+        fileID: StaticString = #fileID,
+        file filePath: StaticString = #filePath,
         testName: String = #function,
         line: UInt = #line,
+        column: UInt = #column,
         modify: (AnyView) -> Modified
     ) {
-        assertSnapshots(as: .image, named: name, record: recording, file: file, testName: testName, line: line, modify: modify)
+        assertSnapshots(
+            as: .image,
+            named: name,
+            record: recording,
+            fileID: fileID,
+            file: filePath,
+            testName: testName,
+            line: line,
+            column: column,
+            modify: modify
+        )
     }
 }
 #endif
