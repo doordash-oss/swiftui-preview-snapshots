@@ -32,7 +32,7 @@ extension PreviewSnapshots {
     public func assertSnapshots<Format>(
         as snapshotting: Snapshotting<AnyView, Format>,
         named name: String? = nil,
-        record recording: Bool = false,
+        record recording: Bool? = nil,
         file: StaticString = #file,
         testName: String = #function,
         line: UInt = #line
@@ -65,7 +65,7 @@ extension PreviewSnapshots {
     public func assertSnapshots<Format>(
         as strategies: [String: Snapshotting<AnyView, Format>],
         named name: String? = nil,
-        record recording: Bool = false,
+        record recording: Bool? = nil,
         file: StaticString = #file,
         testName: String = #function,
         line: UInt = #line
@@ -99,7 +99,7 @@ extension PreviewSnapshots {
     public func assertSnapshots<Format>(
         as strategies: [Snapshotting<AnyView, Format>],
         named name: String? = nil,
-        record recording: Bool = false,
+        record recording: Bool? = nil,
         file: StaticString = #file,
         testName: String = #function,
         line: UInt = #line
@@ -151,7 +151,7 @@ extension PreviewSnapshots {
     public func assertSnapshots<Modified: View, Format>(
         as snapshotting: Snapshotting<Modified, Format>,
         named name: String? = nil,
-        record recording: Bool = false,
+        record recording: Bool? = nil,
         file: StaticString = #file,
         testName: String = #function,
         line: UInt = #line,
@@ -202,7 +202,7 @@ extension PreviewSnapshots {
     public func assertSnapshots<Modified: View, Format>(
         as strategies: [String: Snapshotting<Modified, Format>],
         named name: String? = nil,
-        record recording: Bool = false,
+        record recording: Bool? = nil,
         file: StaticString = #file,
         testName: String = #function,
         line: UInt = #line,
@@ -254,7 +254,7 @@ extension PreviewSnapshots {
     public func assertSnapshots<Modified: View, Format>(
         as strategies: [Snapshotting<Modified, Format>],
         named name: String? = nil,
-        record recording: Bool = false,
+        record recording: Bool? = nil,
         file: StaticString = #file,
         testName: String = #function,
         line: UInt = #line,
@@ -292,7 +292,7 @@ extension PreviewSnapshots {
     ///         this function was called.
     public func assertSnapshots(
         named name: String? = nil,
-        record recording: Bool = false,
+        record recording: Bool? = nil,
         file: StaticString = #file,
         testName: String = #function,
         line: UInt = #line
@@ -333,7 +333,7 @@ extension PreviewSnapshots {
     ///   - modify: A closure to update the preview content before snapshotting.
     public func assertSnapshots<Modified: View>(
         named name: String? = nil,
-        record recording: Bool = false,
+        record recording: Bool? = nil,
         file: StaticString = #file,
         testName: String = #function,
         line: UInt = #line,
